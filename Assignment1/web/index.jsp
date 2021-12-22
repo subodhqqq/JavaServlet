@@ -18,10 +18,6 @@
     <label for="password">PASSWORD:</label>
     <input type="password" name="password" placeholder="Enter the your password"><br>
     <input type="submit" value="login" >
-
-
-
-
   </form>
   </body>
 </html>

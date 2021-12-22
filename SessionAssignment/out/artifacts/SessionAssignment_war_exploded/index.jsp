@@ -10,7 +10,6 @@
   <head>
     <title>$Title$</title>
   </head>
-  <link rel="stylesheet" href="./css/style.css">
   <body>
   <body>
   <form ACTION="/LoginServlet" method="post" name="Loginform">
