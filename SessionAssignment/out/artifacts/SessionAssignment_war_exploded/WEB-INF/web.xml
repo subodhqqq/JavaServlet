@@ -21,4 +21,27 @@
         <servlet-name>DashboardServlet</servlet-name>
         <url-pattern>/DashboardServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>Logout.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>Home.HomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/HomeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--<session-config>-->
+
+        <!--<session-timeout>1</session-timeout>-->
+    <!--</session-config>-->
 </web-app>

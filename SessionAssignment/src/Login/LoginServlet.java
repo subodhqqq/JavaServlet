@@ -14,10 +14,12 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         PrintWriter out=response.getWriter();
         String name =request.getParameter("username");
         String password =request.getParameter("password");
+
         if(password.equals("JAVA") && name.equals("Subodh"))
         {
             HttpSession session=request.getSession(true);
-            //session.getAttribute("sesionName",name);
+            session.setAttribute("sesionName",name);
+            out.println("welcome "+name);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("/DashboardServlet");
             requestDispatcher.forward(request,response);
         }
