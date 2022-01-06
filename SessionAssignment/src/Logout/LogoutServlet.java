@@ -23,8 +23,8 @@ public class LogoutServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
 
-        HttpSession httpSession=request.getSession();
-        httpSession.invalidate();
+      //  HttpSession httpSession=request.getSession();
+       // httpSession.invalidate();
         response.sendRedirect("/index.jsp");
         //out.println("logout sucessfully");
 //        RequestDispatcher requestDispatcher=request.getRequestDispatcher("/index.jsp");

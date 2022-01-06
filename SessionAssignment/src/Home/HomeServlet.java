@@ -20,7 +20,7 @@ public class HomeServlet extends HttpServlet {
         String name=request.getParameter("username");
         out.print("Welcome"+name);
 
-        HttpSession httpSession=request.getSession(false);
+      //  HttpSession httpSession=request.getSession(false);
         out.println("<form action='/index.jsp' method='POST'>");
         out.println("<input type='submit' value='submit'>");
         out.print("</form>");

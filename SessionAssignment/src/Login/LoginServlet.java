@@ -17,8 +17,8 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
 
         if(password.equals("JAVA") && name.equals("Subodh"))
         {
-            HttpSession session=request.getSession(true);
-            session.setAttribute("sesionName",name);
+            HttpSession session=request.getSession();
+            session.setAttribute("sessionName",name);
             out.println("welcome "+name);
             RequestDispatcher requestDispatcher=request.getRequestDispatcher("/DashboardServlet");
             requestDispatcher.forward(request,response);

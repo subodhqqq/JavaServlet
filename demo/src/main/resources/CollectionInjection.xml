@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean class="Collection.CollectionInjection" name="collection">
+    <property name="students">
+        <list>
+            <value>Subodh</value>
+            <value>Sirjal</value>
+            <value>deepu</value>
+        </list>
+    </property>
+    <property name="colleges">
+        <set>
+            <value>Subodh</value>
+        <value>Sirjal</value>
+        <value>deepu</value>
+        </set>
+    </property>
+
+    <property name="phone">
+
+        <map>
+            <!--<entry key="123",value="123"/>-->
+            <!--<entry key="1234",value="1234"/>-->
+           <entry key="1" value="123"/>
+            <entry key="3" value="1234"/>
+
+
+        </map>
+    </property>
+
+</bean>
+</beans>

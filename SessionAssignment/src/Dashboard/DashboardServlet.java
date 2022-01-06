@@ -21,7 +21,9 @@ public class DashboardServlet extends HttpServlet {
        String name=request.getParameter("username");
 
         HttpSession session=request.getSession(false);
-        session.setMaxInactiveInterval(30);
+        session.setAttribute("sessionName",name);
+        session.setMaxInactiveInterval(10);
+
         out.println("<a href='/HomeServlet'>Home</a>");
         if(session!=null) {
             out.println("hello" + name);
