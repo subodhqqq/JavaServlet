@@ -1,8 +1,10 @@
 package com.example.stydent.Controller;
 
 import com.example.stydent.Service.StudentService;
+import com.example.stydent.config.WebSecurity;
 import com.example.stydent.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,11 @@ import java.util.List;
 public class StudentController {
     @Autowired
     StudentService studentService;
+    @Autowired
+    WebSecurity webSecurity;
+    @Autowired
+    BCryptPasswordEncoder PasswordHasing;
+
     @GetMapping("/")
     public String homePage(Model model){
 
@@ -43,6 +50,9 @@ public class StudentController {
 
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     public String saveStudent(@ModelAttribute("student") Student student){
+        String password=student.getPassword();
+        String encyptPassword=PasswordHasing.encode(password);
+        student.setPassword(encyptPassword);
          studentService.saveStudent(student);
          return "redirect:/";
 

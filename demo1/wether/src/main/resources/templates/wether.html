@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Nepal Wether</title>
+</head>
+<body>
+<div class="container parent">
+    <!--    <input type="submit"><a th:href="@{/new}"></a> add new/>-->
+    <button><a th:href="@{/new}" >Add</a></button>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">decription</th>
+            <th scope="col">temp</th>
+            <th scope="col">country</th>
+            <th scope="col">feels_like</th>
+            <th scope="col">speed</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr th:each="students: ${list}">
+            <!--            <th  th:text="${students.id}">Id</th>-->
+            <td  th:text="${students.id}">Id</td>
+            <td th:text="${students.username}"></td>
+            <td th:text="${students.password}"></td>
+            <td> <button type="submit"><a th:href="@{'/edit/'+${students.id}}">edit </a></button></td>
+            <td> <button type="submit"><a th:href="@{'/delete/'+${students.id}}">delete</a></button></td>
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
