@@ -12,10 +12,10 @@ import java.math.BigDecimal;
 
 
 public class wetherModel {
-    //private int id;
+
     private String decription;
     private BigDecimal temp;
-    //private String country;
+
     private BigDecimal feels_like;
     private BigDecimal speed;
 

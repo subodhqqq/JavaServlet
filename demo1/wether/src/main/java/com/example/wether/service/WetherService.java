@@ -16,21 +16,22 @@ import java.net.URI;
 
 @Service
 public class WetherService {
-    private static final String Weather_Apikey = "http://api.openweathermap.org/data/2.5/weather?q=Kathmandu,nepal&appid=4c4343e7f9ff2c7e5d62a48c6d1cdcfd";
+    private static final String Weather_Apikey = "http://api.openweathermap.org/data/2.5/weather?q=kathmandu,Nepal&appid={apikey}}";
 
     private final RestTemplate restTemplate;//rest template le chahi json form ma api data tanxa
     private final ObjectMapper objectMapper;//object mapper le chahi json from ko data lai object from ma convert garxa
-
+    @value("${api}")
+    private String apikey;
 
     public WetherService(RestTemplateBuilder restTemplateBuilder, ObjectMapper objectMapper) {
         this.restTemplate = restTemplateBuilder.build();//rest templet lai resttemplete builder lai configure garira xa
         this.objectMapper = objectMapper;
     }
-    public wetherModel getCurrentWeather(String city,String countary){
+    public wetherModel getCurrentWeather(String city,String country){
         URI uri=null;
-        uri=new UriTemplate(Weather_Apikey).expand(city,countary);
+        uri=new UriTemplate(Weather_Apikey).expand(city,country,apikey);
         ResponseEntity<String> responseEntity=
-                restTemplate.getForEntity(Weather_Apikey,String.class);//object from ma vayako data lai string ma string from ma store ra  conveted garxa
+                restTemplate.getForEntity(Weather_Apikey,String.class);//json from ma vayako data lai string ma string from ma store ra  conveted garxa
         return convert(responseEntity);
 
     }

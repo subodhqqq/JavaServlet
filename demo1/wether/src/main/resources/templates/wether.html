@@ -9,14 +9,13 @@
 </head>
 <body>
 <div class="container parent">
-    <!--    <input type="submit"><a th:href="@{/new}"></a> add new/>-->
-    <button><a th:href="@{/new}" >Add</a></button>
+
+
     <table class="table">
         <thead>
         <tr>
             <th scope="col">decription</th>
             <th scope="col">temp</th>
-            <th scope="col">country</th>
             <th scope="col">feels_like</th>
             <th scope="col">speed</th>
 
@@ -24,13 +23,13 @@
         </thead>
         <tbody>
 
-        <tr th:each="students: ${list}">
-            <!--            <th  th:text="${students.id}">Id</th>-->
-            <td  th:text="${students.id}">Id</td>
-            <td th:text="${students.username}"></td>
-            <td th:text="${students.password}"></td>
-            <td> <button type="submit"><a th:href="@{'/edit/'+${students.id}}">edit </a></button></td>
-            <td> <button type="submit"><a th:href="@{'/delete/'+${students.id}}">delete</a></button></td>
+        <tr th:each="currentWeather: ${currentWeather}">
+
+            <td  th:text="${currentWeather.decription}">decription</td>
+            <td  th:text="${currentWeather.temp}">temp</td>
+            <td  th:text="${currentWeather.feels_like}">feels_like</td>
+            <td  th:text="${currentWeather.speed}">speed</td>
+
         </tr>
 
 
