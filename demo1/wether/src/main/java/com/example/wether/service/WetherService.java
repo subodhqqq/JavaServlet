@@ -23,7 +23,7 @@ public class WetherService {
 
 
     public WetherService(RestTemplateBuilder restTemplateBuilder, ObjectMapper objectMapper) {
-        this.restTemplate = restTemplateBuilder.build();
+        this.restTemplate = restTemplateBuilder.build();//rest templet lai resttemplete builder lai configure garira xa
         this.objectMapper = objectMapper;
     }
     public wetherModel getCurrentWeather(String city,String countary){
@@ -39,7 +39,7 @@ public class WetherService {
         try {
             JsonNode root = objectMapper.readTree(responseEntity.getBody());//object mapper le root ma description temp  feels_like ra speed lai object ko from ma convert garxa
 
-            return new wetherModel(root.path("weather").get(0).path("description").asText(),
+            return new wetherModel(root.path("weather").get(0).path("description").asText(),//value off ma store garxa aako value
                     BigDecimal.valueOf(root.path("main").path("temp").asDouble()),
                     BigDecimal.valueOf(root.path("main").path("feels_like").asDouble()),
                     BigDecimal.valueOf(root.path("wind").path("speed").asDouble()));
